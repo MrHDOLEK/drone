@@ -10,6 +10,7 @@ $config = new Config(
         "src",
         "codestyle.php",
         "index.php",
+        "tests",
     ),
 );
 

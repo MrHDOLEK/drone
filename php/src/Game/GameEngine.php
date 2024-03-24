@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Drone\Game;
 
-use Drone\Game\Exception\InsufficientNumberTeamsException;
+use Drone\Exception\InsufficientNumberTeamsException;
 use Drone\Team\Team;
 use Drone\Team\TeamCollection;
 use Exception;

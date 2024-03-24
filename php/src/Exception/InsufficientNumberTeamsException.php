@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drone\Game\Exception;
+namespace Drone\Exception;
 
 use Exception;
 

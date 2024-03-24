@@ -11,7 +11,6 @@ use Drone\Game\Rules\GameRules;
 use Drone\Game\Rules\ScoreLimitRule;
 use Drone\Game\Rules\TimeLimitRule;
 use Drone\Team\TeamCollection;
-use Exception;
 use League\CLImate\CLImate;
 
 class Tournament

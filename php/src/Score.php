@@ -32,12 +32,4 @@ class Score
     {
         $this->awayScore = $this->awayScore + self::SINGLE_GOAL;
     }
-
-    public function toArray(): array
-    {
-        return [
-            "home" => $this->homeScore(),
-            "away" => $this->awayScore(),
-        ];
-    }
 }

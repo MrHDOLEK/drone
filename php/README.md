@@ -1,7 +1,6 @@
 # Drone
 
 ---
-# Development setup with Docker
 
 ## List all commands in the makefile
 
@@ -19,7 +18,16 @@ Run `make install` or follow the steps below:
 
         make install
         make start
+### How to run play game ?
 
+Run `make play-game` or follow the steps below:
+
+- enter the container shell:
+
+        make bash
+- run the command:
+
+        composer start
 ### Running tests
 
 - run PHP tests: `composer test` or `make test` with docker setup

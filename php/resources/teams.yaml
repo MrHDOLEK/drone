@@ -1,0 +1,26 @@
+country: "Exampleland"
+football_teams:
+  - name: "Dragons FC"
+    city: "Capital City"
+    founded: 1901
+    stadium: "Dragon Arena"
+  - name: "Eagles United"
+    city: "Liberty Town"
+    founded: 1923
+    stadium: "Eagle Nest Stadium"
+  - name: "Wolves Athletic"
+    city: "Forestville"
+    founded: 1955
+    stadium: "Wolves Den"
+  - name: "Sharks FC"
+    city: "Coastal City"
+    founded: 1980
+    stadium: "Shark Tank"
+  - name: "Falcons City FC"
+    city: "Skyline City"
+    founded: 1972
+    stadium: "Falcon Field"
+  - name: "Big Brain"
+    city: "New perspective"
+    founded: 1945
+    stadium: "Wieliczka"

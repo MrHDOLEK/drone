@@ -1,0 +1,36 @@
+{
+	"name": "mrhdolek/drone",
+	"description": "drone",
+	"keywords": [
+		"PHP 8.3",
+		"Behat",
+		"Docker",
+		"Composer",
+		"CLImate"
+	],
+	"license": "MIT",
+	"type": "project",
+	"autoload": {
+		"psr-4": {
+			"Drone\\": "src/"
+		}
+	},
+	"require": {
+		"php": "^8.3",
+		"symfony/yaml": "^5.1",
+		"illuminate/support": "^8.16",
+		"league/climate": "^3.6"
+	},
+	"require-dev": {
+		"behat/behat": "^3.8",
+		"phpunit/phpunit": "^9.2",
+		"blumilksoftware/codestyle": "^1.0"
+	},
+	"scripts": {
+		"cs:fix": "./vendor/bin/php-cs-fixer fix --diff --config codestyle.php",
+		"cs:check": "./vendor/bin/php-cs-fixer fix --dry-run --diff --config codestyle.php",
+		"phpstan": [
+			"php -d memory_limit=600M vendor/bin/phpstan analyse -c phpstan.neon"
+		]
+	}
+}

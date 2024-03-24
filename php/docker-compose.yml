@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  app:
+    container_name: kt-drone-app
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+      target: prod
+    working_dir: /var/www
+    environment:
+      - DOCKER=1
+    volumes:
+      - ./.docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - ./.docker/php/php-fpm.conf:/etc/php/fpm/php-fpm.conf
+      - .:/var/www
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - drone
+# Networks
+networks:
+  drone:
+    driver: bridge

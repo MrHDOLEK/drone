@@ -11,7 +11,6 @@ else
 endif
 
 install: ## Copy .env.example to .env and build docker image
-	cp .env.dist .env
 	$(DOCKER_COMPOSE) build
 	$(MAKE) start
 	$(DOCKER_COMPOSE) run app composer install
@@ -36,6 +35,9 @@ cs-fix: ## Run composer cs
 
 kill-all: ## Kill all running containers
 	docker container kill $$(docker container ls -q)
+
+play-game: ## Run the game
+	$(DOCKER_COMPOSE) exec app composer start
 
 .PHONY: help
 help:

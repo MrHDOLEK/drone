@@ -3,7 +3,7 @@
 	"description": "drone",
 	"keywords": [
 		"PHP 8.3",
-		"Behat",
+		"PhpUnit",
 		"Docker",
 		"Composer",
 		"CLImate"
@@ -13,6 +13,11 @@
 	"autoload": {
 		"psr-4": {
 			"Drone\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\": "tests/"
 		}
 	},
 	"require": {
@@ -33,6 +38,7 @@
 		"phpstan": [
 			"php -d memory_limit=600M vendor/bin/phpstan analyse -c phpstan.neon"
 		],
-		"test": "phpunit"
+		"test": "phpunit",
+		"start": "php index.php"
 	}
 }

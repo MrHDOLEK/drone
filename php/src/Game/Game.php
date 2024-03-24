@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Drone\Game;
 
-use DateTime;
 use DateTimeImmutable;
 use Drone\Score;
 use Drone\Team\Team;
@@ -40,5 +39,16 @@ class Game
     public function awayTeam(): Team
     {
         return $this->awayTeam;
+    }
+
+    public function winner(): ?Team
+    {
+        $homeScore = $this->score->homeScore();
+        $awayScore = $this->score->awayScore();
+
+        if ($homeScore > $awayScore) {
+            return $this->homeTeam();
+        }
+        return $this->awayTeam();
     }
 }

@@ -6,6 +6,8 @@ namespace Drone;
 
 class Score
 {
+    private const SINGLE_GOAL = 1;
+
     public function __construct(
         private int $homeScore = 0,
         private int $awayScore = 0,
@@ -21,21 +23,21 @@ class Score
         return $this->awayScore;
     }
 
-    public function setHomeScore(int $score): self
+    public function addHomeScore(): void
     {
-        return new self($score, $this->awayScore);
+        $this->homeScore = $this->homeScore + self::SINGLE_GOAL;
     }
 
-    public function setAwayScore(int $score): self
+    public function addAwayScore(): void
     {
-        return new self($this->homeScore, $score);
+        $this->awayScore = $this->awayScore + self::SINGLE_GOAL;
     }
 
     public function toArray(): array
     {
         return [
-            "home" => $this->homeScore,
-            "away" => $this->awayScore,
+            "home" => $this->homeScore(),
+            "away" => $this->awayScore(),
         ];
     }
 }

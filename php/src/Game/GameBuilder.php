@@ -28,6 +28,7 @@ class GameBuilder
                     $teamData["city"],
                     $teamData["founded"],
                     $teamData["stadium"],
+                    $teamData["weight"],
                 ),
             );
         }

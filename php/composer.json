@@ -24,7 +24,8 @@
 	"require-dev": {
 		"behat/behat": "^3.8",
 		"phpunit/phpunit": "^9.2",
-		"blumilksoftware/codestyle": "^1.0"
+		"blumilksoftware/codestyle": "^1.0",
+		"phpstan/phpstan": "^1.10"
 	},
 	"scripts": {
 		"cs:fix": "./vendor/bin/php-cs-fixer fix --diff --config codestyle.php",

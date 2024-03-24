@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Drone\Game\Specification;
+namespace Drone\Game\Rules;
 
-use DateTime;
 use DateTimeImmutable;
 use Drone\Game\Game;
 

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Drone\Game\Specification;
+namespace Drone\Game\Rules;
 
 use Drone\Game\Game;
 
-class GameRuleInterface implements RuleSpecificationInterface
+class GameRules implements RuleSpecificationInterface
 {
     public const NAME = "AndRule";
 

@@ -11,7 +11,7 @@ class Team
         private string $city,
         private int $founded,
         private string $stadium,
-        private bool $loss = false,
+        private int $weight,
     ) {}
 
     public function name(): string
@@ -34,13 +34,8 @@ class Team
         return $this->stadium;
     }
 
-    public function loss(): bool
+    public function weight(): int
     {
-        return $this->loss;
-    }
-
-    public function setLoss(): void
-    {
-        $this->loss = true;
+        return $this->weight;
     }
 }

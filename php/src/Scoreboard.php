@@ -4,31 +4,29 @@ declare(strict_types=1);
 
 namespace Drone;
 
+use Countable;
 use Drone\Game\Game;
-use Drone\Game\GameCollection;
-use Drone\Team\Team;
 
-class Scoreboard
+class Scoreboard implements Countable
 {
-    private GameCollection $games;
+    /** @var array<Game> */
+    private array $items = [];
 
-    public function startGame(Team $homeTeam, Team $awayTeam): void
+    /**
+     * @return array<Game>
+     */
+    public function items(): array
     {
-        $this->games = new GameCollection();
-        $this->games->add(new Game($homeTeam, $awayTeam));
+        return $this->items;
     }
 
-    public function finishGame(Game $game): void
+    public function count(): int
     {
+        return count($this->items);
     }
 
-    public function updateScore(Game $game, int $homeScore, int $awayScore): void
+    public function add(Game $game): void
     {
-        $game->score->setHomeScore($homeScore);
-        $game->score->setAwayScore($awayScore);
-    }
-
-    public function getSummary(): GameCollection
-    {
+        $this->items[] = $game;
     }
 }

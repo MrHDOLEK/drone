@@ -1,0 +1,35 @@
+name: Check PR Title
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+      - edited
+
+jobs:
+  check-pr-title:
+    name: Check PR title
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Check for PR title change
+        id: title_change
+        run: |
+          echo "PR Title: ${{ github.event.pull_request.title }}"
+          echo "Previous PR Title: ${{ github.event.pull_request.previous_title }}"
+          if [[ "${{ github.event.pull_request.title }}" == "${{ github.event.pull_request.previous_title }}" ]]; then
+            echo "::set-output name=skip::true"
+          else
+            echo "::set-output name=skip::false"
+          fi
+
+      - name: Run PR Title Check
+        if: steps.title_change.outputs.skip != 'true'
+        uses: blumilksoftware/action-pr-title@v1.2.0

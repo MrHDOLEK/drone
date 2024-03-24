@@ -1,0 +1,42 @@
+country: "Exampleland"
+football_teams:
+  - name: "Dragons FC"
+    city: "Capital City"
+    founded: 1901
+    stadium: "Dragon Arena"
+    weight: 90
+  - name: "Eagles United"
+    city: "Liberty Town"
+    founded: 1923
+    stadium: "Eagle Nest Stadium"
+    weight: 85
+  - name: "Wolves Athletic"
+    city: "Forestville"
+    founded: 1955
+    stadium: "Wolves Den"
+    weight: 88
+  - name: "Sharks FC"
+    city: "Coastal City"
+    founded: 1980
+    stadium: "Shark Tank"
+    weight: 82
+  - name: "Falcons City FC"
+    city: "Skyline City"
+    founded: 1972
+    stadium: "Falcon Field"
+    weight: 87
+  - name: "Big Brain"
+    city: "New perspective"
+    founded: 1945
+    stadium: "Wieliczka"
+    weight: 80
+  - name: "Lions Club"
+    city: "Jungle Heights"
+    founded: 1966
+    stadium: "Lion's Den"
+    weight: 83
+  - name: "Raptors FC"
+    city: "Mountain Ridge"
+    founded: 1978
+    stadium: "Raptor Grounds"
+    weight: 84

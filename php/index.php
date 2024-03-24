@@ -28,14 +28,14 @@ while ($teams->count() > 1) {
     $nextRoundTeams = [];
     foreach ($games->items() as $game) {
         while (true) {
-            $cli->info("Starting game: {$game->homeTeam()->name()} vs {$game->awayTeam()->name()}");
+            $cli->yellow()->info("Starting game: {$game->homeTeam()->name()} vs {$game->awayTeam()->name()}");
 
             $gameEngine->simulateGame($game);
 
-            $cli->info("Updating score: Home - {$game->score()->homeScore()}, Away - {$game->score()->awayScore()}");
+            $cli->green()->info("Updating score: Home - {$game->score()->homeScore()}, Away - {$game->score()->awayScore()}");
 
             if (!$gameRules->isSatisfiedBy($game)) {
-                $cli->info("Finishing game: {$game->homeTeam()->name()} vs {$game->awayTeam()->name()}");
+                $cli->red()->info("Finishing game: {$game->homeTeam()->name()} vs {$game->awayTeam()->name()}");
                 $nextRoundTeams[] = $game->winner();
                 $scoreboard->add($game);
                 break;
@@ -46,10 +46,10 @@ while ($teams->count() > 1) {
     $teams = new TeamCollection(...$nextRoundTeams);
 }
 
-$cli->info("Tournament Summary:");
+$cli->lightBlue()->info("Tournament Summary:");
 foreach ($scoreboard->items() as $summaryGame) {
-    $cli->info("{$summaryGame->homeTeam()->name()} vs {$summaryGame->awayTeam()->name()} - Score: {$summaryGame->score()->homeScore()}-{$summaryGame->score()->awayScore()}");
+    $cli->cyan()->info("{$summaryGame->homeTeam()->name()} vs {$summaryGame->awayTeam()->name()} - Score: {$summaryGame->score()->homeScore()}-{$summaryGame->score()->awayScore()}");
 }
 
 $champion = $teams->first();
-$cli->info("Champion: {$champion->name()}");
+$cli->magenta()->info("Champion: {$champion->name()}");

@@ -32,6 +32,7 @@
 		"cs:check": "./vendor/bin/php-cs-fixer fix --dry-run --diff --config codestyle.php",
 		"phpstan": [
 			"php -d memory_limit=600M vendor/bin/phpstan analyse -c phpstan.neon"
-		]
+		],
+		"test": "phpunit"
 	}
 }

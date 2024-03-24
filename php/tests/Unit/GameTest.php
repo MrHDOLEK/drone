@@ -13,7 +13,7 @@ class GameTest extends TestCase
 {
     private Game $game;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $teamCollection = GameBuilder::buildFromYaml(self::TEAMS_FILE);
 
